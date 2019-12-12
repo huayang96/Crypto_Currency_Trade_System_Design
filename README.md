@@ -7,11 +7,14 @@ You should have mysql(include workbench),windows Powershell,visual studio,Python
 Step 2:
 In mysql
 in your local host 
-create a new database (if you do not name it 'relation_model',make sure you change database name in python in the future)
-import rocket_sql_database.sql in new database
+create a new database,like relation_model (if you do not name it 'relation_model',make sure you change database name in python in the future)
+use relation_model
+import rocket_sql_database.sql in the relation_model
+
+Note:
 def get_connection():
     return mc.connect(user = 'root', password = 'yourpassword', host = '127.0.0.1',database = 'relation_model', auth_plugin ='mysql_native_password')
-    make sure every thing is same in your database
+make sure every thing in get_connection() is same in your database
 
 Step3:
 Put the app folder under the C/users/your username/
