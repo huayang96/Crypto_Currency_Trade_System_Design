@@ -250,9 +250,6 @@ def Rocket_processorder():
     return 'You just ' + R_act_type +'  '  + R_Qty +'  ' + R_Coin_type +' at unit price($) '+ str(Coin_price) +' ,this order is processed'
 
 
-
-#for main web
-
 def show_product():
     conn = get_connection()
     result = conn.cmd_query("select product_name,price from product")
@@ -296,8 +293,6 @@ def show_orders():
     orders = rows[0]
     return orders
 
-
-#connect with database
 def get_rpl(coin_id):
     conn = get_connection()
     # result = conn.cmd_query("select * from product")
@@ -341,45 +336,7 @@ def insert_order(product_id,action_id,quantity):
     connection.commit()
 
 
-# def build_request_BTC():
-#     return "{ \"type\": \"subscribe\",    \"channels\": [{ \"name\": \"ticker\", \"product_ids\": [\"BTC-USD\"] }]}"
-
-
 
 def get_connection():
     return mc.connect(user = 'root', password = '123456', host = '127.0.0.1',database = 'relation_model', auth_plugin ='mysql_native_password')
 
-
-
-
-
-# def R_trade_submission():
-#     conn= mc.connect(user = 'root', password = '123456', host = '127.0.0.1',database = 'relation_model', auth_plugin ='mysql_native_password')
-#     result=conn.cmd_query("select product_name from product")
-#     crypto_list=conn.get_rows()
-#     results=conn.cmd_query("select action_type from action")
-#     action_list=conn.get_rows()
-#     conn.close()
-#     return render_template('index.html', list_of_cryptos=crypto_list[0], list_of_action=action_list[0])
-
-
-# @app.route("/showActions")
-# def show_action():
-#     conn = get_connection()
-#     result = conn.cmd_query("select * from action")
-#     rows =conn.get_rows()
-#     conn.close()
-#     return str(rows[0])
-
-
-# def get_submisssion():
-#     stuff_name = request.form['mystuff']
-#     myssn = request.form['myssn']
-#     print('myssn',myssn)
-#     print('my stuff is',stuff_name)
-#     return "you send your stuffname<b>" + stuff_name + "</b>"+ "<br>"+ "you send your ssn<b>" + myssn + "</b>" +"<br" + my_type
-
-# @app.route("/blotter")
-# def show_blotter():
-#     blotter = ['a','b','c']
-#     return render_template('hello.html',xyz =blotter)
