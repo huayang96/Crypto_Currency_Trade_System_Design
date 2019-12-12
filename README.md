@@ -7,17 +7,15 @@ You should have mysql(include workbench),windows Powershell,visual studio,Python
 Step 2:
 In mysql
 in your local host 
-create a new database (if you do not name it 'relation_model',make sure you change database name in python)
-
+create a new database (if you do not name it 'relation_model',make sure you change database name in python in the future)
+import rocket_sql_database.sql in new database
 def get_connection():
     return mc.connect(user = 'root', password = '123456', host = '127.0.0.1',database = 'relation_model', auth_plugin ='mysql_native_password')
+    make sure every thing is same in your database
 
 Step3:
+Put the app folder under the C/users/your username/
 In powershell
-mkdir app
-cd app
-Put all things from github-app in your app
-
 pip install flask
 pip install mysql_connector_python
 pip install websocket
