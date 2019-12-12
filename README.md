@@ -1,4 +1,6 @@
 # BitcoinTrade-System
+Team Rocket
+Hua Yang/ ShiChao Xu/ChenXiang Ji
 A Local crypto currency
 
 Step1:
